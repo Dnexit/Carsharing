@@ -5,6 +5,27 @@ public class CarsharingDB : MonoBehaviour
 {
     #region Methods
 
+    #region PublicMethods
+
+    public static bool CheckUser(int id)
+    {
+        var user_id = SQLManager.ExecuteQueryWithAnswer($"select user_ID from User where user_ID = {id};");
+        
+        Debug.Log(user_id);
+        if (user_id != null)
+        {
+            return true;
+        }
+        return false;
+    }
+    
+
+    #endregion
+
+    #endregion
+    
+    #region Example Methods TO DELETE
+
     #region Public Methods
 
     public static string GetUsername(string name)

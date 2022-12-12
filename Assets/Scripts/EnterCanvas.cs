@@ -10,20 +10,37 @@ public class EnterCanvas : Page
     [SerializeField] private Button enterButton;
     [SerializeField] private TMP_InputField nameField;
     [SerializeField] private MainCanvas mainCanvas;
+    private int user_id;
 
     private void Awake()
     {
-        nameField.onEndEdit.AddListener((name) =>
+        nameField.onEndEdit.AddListener((user_ID) =>
         {
+            if (user_ID != "" | user_ID != null | int.TryParse(user_ID, out int user_id_number))
+            {
+                enterButton.interactable = true;
+                user_id = user_id_number;
+            }
+            else 
+            {
+                enterButton.interactable = false;
+            }
             
         });
 
         enterButton.onClick.AddListener(() =>
         {
-            this.gameObject.SetActive(false);
-            mainCanvas.gameObject.SetActive(true);
+            if (CarsharingDB.CheckUser(user_id))
+            {
+                HideCanvas();
+                mainCanvas.ShowCanvas();    
+            }
+            else
+            {
+                Debug.Log("ты пидорас");
+            }
         });
-        
-        
+
+        enterButton.interactable = false;
     }
 }
