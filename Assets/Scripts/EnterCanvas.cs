@@ -9,6 +9,7 @@ public class EnterCanvas : Page
 {
     [SerializeField] private Button enterButton;
     [SerializeField] private TMP_InputField nameField;
+    [SerializeField] private MainCanvas mainCanvas;
 
     private void Awake()
     {
@@ -16,5 +17,13 @@ public class EnterCanvas : Page
         {
             
         });
+
+        enterButton.onClick.AddListener(() =>
+        {
+            this.gameObject.SetActive(false);
+            mainCanvas.gameObject.SetActive(true);
+        });
+        
+        
     }
 }
