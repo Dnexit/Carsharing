@@ -17,6 +17,7 @@ public class CurrentUser : MonoBehaviour
             user_ID = PlayerPrefs.GetInt(USER_ID);
             enterCanvas.HideCanvas();
             mainCanvas.ShowCanvas();
+            // маринин лох
         }
     }
 }
