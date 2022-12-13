@@ -910,6 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCanvas: {fileID: 727478504}
   enterCanvas: {fileID: 847473993}
+  user_ID: 0
 --- !u!4 &358646834
 Transform:
   m_ObjectHideFlags: 0
@@ -1497,7 +1498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &727478500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,6 +1599,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8febb6a25d3ff1c4dad4865a991a86a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 1167874760}
+  currentUser: {fileID: 358646833}
+  enterCanvas: {fileID: 847473993}
+  buttonToExit: {fileID: 841981646}
+  buttonOrderCar: {fileID: 1756131446}
+  buttonChange: {fileID: 1338067234}
+  buttonStory: {fileID: 902699810}
 --- !u!1 &736425878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,7 +1912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &847473989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2006,6 +2014,7 @@ MonoBehaviour:
   enterButton: {fileID: 985133703}
   nameField: {fileID: 586563905}
   mainCanvas: {fileID: 727478504}
+  currentUser: {fileID: 358646833}
 --- !u!1 &884267089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4472,7 +4481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit

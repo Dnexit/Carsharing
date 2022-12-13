@@ -10,6 +10,7 @@ public class EnterCanvas : Page
     [SerializeField] private Button enterButton;
     [SerializeField] private TMP_InputField nameField;
     [SerializeField] private MainCanvas mainCanvas;
+    [SerializeField] private CurrentUser currentUser;
     private int user_id;
 
     private void Awake()
@@ -32,12 +33,14 @@ public class EnterCanvas : Page
         {
             if (CarsharingDB.CheckUser(user_id))
             {
+                currentUser.SaveUser(user_id);
                 HideCanvas();
-                mainCanvas.ShowCanvas();    
+                mainCanvas.ShowCanvas();
+                
             }
             else
             {
-                Debug.Log("ты пидорас");
+                // тут если такого пользователя нет в БД
             }
         });
 

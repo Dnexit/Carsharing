@@ -18,6 +18,12 @@ public class CarsharingDB : MonoBehaviour
         }
         return false;
     }
+
+    public static string GetUserName(int user_id)
+    {
+        var userName = SQLManager.ExecuteQueryWithAnswer($"select name from User where user_ID = {user_id};");
+        return userName;
+    }
     
 
     #endregion
