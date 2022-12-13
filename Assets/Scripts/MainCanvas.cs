@@ -14,6 +14,7 @@ public class MainCanvas : Page
     [SerializeField] private Button buttonOrderCar;
     [SerializeField] private Button buttonChange;
     [SerializeField] private Button buttonStory;
+    [SerializeField] private OrderCanvas orderCanvas;
     
 
     private void Awake()
@@ -27,7 +28,8 @@ public class MainCanvas : Page
         
         buttonOrderCar.onClick.AddListener(() =>
         {
-
+            this.HideCanvas();
+            orderCanvas.ShowCanvas();
         });
         
         buttonChange.onClick.AddListener(() =>
