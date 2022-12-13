@@ -16,6 +16,7 @@ public class MainCanvas : Page
     [SerializeField] private Button buttonStory;
     [SerializeField] private OrderCanvas orderCanvas;
     
+    
 
     private void Awake()
     {
@@ -34,7 +35,7 @@ public class MainCanvas : Page
         
         buttonChange.onClick.AddListener(() =>
         {
-
+            
         });
         
         buttonStory.onClick.AddListener(() =>
@@ -52,6 +53,14 @@ public class MainCanvas : Page
 
     public override void ShowCanvas()
     {
+        if (currentUser.IsUserAdmin())
+        {
+          buttonChange.gameObject.SetActive(true);  
+        }
+        else
+        {
+            buttonChange.gameObject.SetActive(false);    
+        }
         base.ShowCanvas();
         nameText.text = CarsharingDB.GetUserName(currentUser.user_ID);
 

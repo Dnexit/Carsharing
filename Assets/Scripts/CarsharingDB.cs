@@ -1,8 +1,11 @@
 ﻿using System.Data;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarsharingDB : MonoBehaviour
 {
+    private const string STRING_ADMIN = "администратор";
+    
     #region Methods
 
     #region PublicMethods
@@ -19,10 +22,21 @@ public class CarsharingDB : MonoBehaviour
         return false;
     }
 
-    public static string GetUserName(int user_id)
+    public static string GetUserName(int id)
     {
-        var userName = SQLManager.ExecuteQueryWithAnswer($"select name from User where user_ID = {user_id};");
+        var userName = SQLManager.ExecuteQueryWithAnswer($"select name from User where user_ID = {id};");
         return userName;
+    }
+
+    public static bool IsUserAdmin(int id)
+    {
+        var userType = SQLManager.ExecuteQueryWithAnswer($"select user_type from User where user_ID = {id};");
+        if (userType == STRING_ADMIN)
+        {
+            return true;
+        }
+
+        return false;
     }
     
 

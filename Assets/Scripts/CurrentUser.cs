@@ -32,6 +32,11 @@ public class CurrentUser : MonoBehaviour
         PlayerPrefs.DeleteKey(USER_ID);
     }
 
+    public bool IsUserAdmin()
+    {
+        return CarsharingDB.IsUserAdmin(user_ID);
+    }
+
 #if UNITY_EDITOR
     
     [MenuItem("PlayerPrefs/Clear")]
