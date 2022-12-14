@@ -41,6 +41,7 @@ public class EnterCanvas : Page
             else
             {
                 // тут если такого пользователя нет в БД
+                AndroidNative.ShowAndroidToastMessage("Неверный пароль");
             }
         });
 
